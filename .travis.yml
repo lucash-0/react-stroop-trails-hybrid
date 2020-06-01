@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+deploy:
+  provider: npm
+  email: jona@ohsu.edu
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: MgdAsjZQNh3e5TUXkUsRFrq6DRa7eftv5VnoeJRm5C3maPwvo+teAVKsphuUP9HUVWYl3omO/zxT6k8wnPKOOZN06qxCiRP6lWnnyro+bSixtQC1F0PhO2ECZY3M9fljbVHYyFlKpUNo8T8RtKODWFzqcrb58P8GzS4kxd+jB8/0RRm4Mwj9So6ioGLf7OOMN+xl5ca/MgwXRIwbFtSozPA+ZrQJR1fDSXdNtrdc++vqhjKaDsmL2/8VAvRESTIAP7JePXpHi4plHAxvPB6bg+P+vXmqKM/je5z8mDhszVEuFEROrD0F74htLasMOghRg4wSM6PcVgY1Dd0c9QPYDV2AHVyqBskdIpYx2THAxDbTMm0QWfxeA7ci5b8UWy2ST8Htb538lMdPrfZWZGuhZhEFbcMIh28LJ4xAuGamBCfEOHSSn2RjVNYYg9sDVfyCWuAENKiMnu7aXImYgbrhTFZab/QkmwO5cjqmbFkJOpICIcAfQjA6IvBm0lqnIqNzg/Z+ihgoNeMl4HgH52Rw3WlRwPGu9TDKjVlv0uHiCILbld2EORmczl7mn64I8tXOZiqWclBmRUsAKsl4PMazDTAwqhBSYW39VGzu9UwSpOO9SXFd8Ui6GCS2ySAdE9cMykCI18QE6fHWmaBN90hghasDk5dGJ4D5SCPVCRRX4lk=
