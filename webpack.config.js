@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   context: path.resolve(__dirname),
   entry: {
-    "react-neuropsych-trails": path.join(__dirname, "src/index.jsx"),
+    "react-stroop-trails-hybrid": path.join(__dirname, "src/index.jsx"),
     "create/main": path.join(__dirname, "src/create_main.jsx"),
     "test/main": path.join(__dirname, "src/test_main.jsx"),
   },

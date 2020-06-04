@@ -1,15 +1,15 @@
 {
-  "name": "@lucash-0/react-neuropsych-trails",
-  "version": "0.1.24",
-  "author": "Thomas Riley",
-  "description": "React components for trail making tests parts A & B",
-  "main": "dist/react-neuropsych-trails.js",
+  "name": "@lucash-0/react-stroop-trails-hybrid",
+  "version": "0.1.5",
+  "author": "Lucas Hahn",
+  "description": "Hybrid clinical test combining Stroop and Trail Making Test",
+  "main": "dist/react-stroop-trails-hybrid.js",
   "scripts": {
     "test": "webpack --config webpack.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/lucash-0/react-neuropsych-trails.git"
+    "url": "git+https://github.com/lucash-0/react-stroop-trails-hybrid.git"
   },
   "publishConfig": {
     "access": "public"
@@ -25,12 +25,12 @@
   ],
   "files": [
     "README.md",
-    "dist/react-neuropsych-trails.js"
+    "dist/react-stroop-trails-hybrid.js"
   ],
   "bugs": {
-    "url": "http://github.com/orcatechteam/react-neuropsych-trails/issues"
+    "url": "https://github.com/lucash-0/react-stroop-trails-hybrid/issues"
   },
-  "homepage": "http://github.com/orcatechteam/react-neuropsych-trails#readme",
+  "homepage": "https://github.com/lucash-0/react-stroop-trails-hybrid#readme",
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^1.3.0",
