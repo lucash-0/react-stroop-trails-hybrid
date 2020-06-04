@@ -70,7 +70,8 @@ function tokens() {
   const xhighest = 710;
   const ylowest = 60;
   const yhighest = 510;
-  const d2 = rx * 2;
+  const dx = rx * 2;
+  const dy = ry * 2;
 
   let tokens = [];
   let xrange = [];
@@ -86,10 +87,10 @@ function tokens() {
     const y = Math.round(ylowest + Math.random() * (yhighest - ylowest));
 
     const ycheck = yrange.every((yr, index) => {
-      if (!(y + d2 - yr < 0 || yr + d2 - y < 0)) {
+      if (!(y + dy - yr < 0 || yr + dy - y < 0)) {
         return (
-          xrange[i] + d2 - xrange[index] < 0 ||
-          xrange[index] + d2 - xrange[i] < 0
+          xrange[i] + dx - xrange[index] < 0 ||
+          xrange[index] + dx - xrange[i] < 0
         );
       }
 
@@ -116,10 +117,12 @@ function tokens() {
   return tokens;
 }
 
-export default {
-  width: 758,
-  height: 558,
-  rx: rx,
-  ry: ry,
-  tokens: tokens(),
-};
+export default function obj() {
+  return {
+    width: 758,
+    height: 558,
+    rx: rx,
+    ry: ry,
+    tokens: tokens(),
+  };
+}

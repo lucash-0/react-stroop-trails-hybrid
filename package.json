@@ -1,6 +1,6 @@
 {
   "name": "@lucash-0/react-stroop-trails-hybrid",
-  "version": "0.1.5",
+  "version": "0.1.11",
   "author": "Lucas Hahn",
   "description": "Hybrid clinical test combining Stroop and Trail Making Test",
   "main": "dist/react-stroop-trails-hybrid.js",

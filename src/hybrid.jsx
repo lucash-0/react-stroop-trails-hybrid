@@ -8,7 +8,7 @@ import Col6 from "./hybrid_col_6";
 
 import ContainerDimensions from "react-container-dimensions";
 
-export default class Trails extends React.PureComponent {
+export default class Hybrid extends React.PureComponent {
   static propTypes = {
     beginEndLabels: PropTypes.bool,
     completedText: PropTypes.string,
@@ -48,8 +48,13 @@ export default class Trails extends React.PureComponent {
   }
 
   state = {
+    trail: null,
     error: "",
   };
+
+  componentDidMount() {
+    this.setState({ trail: Col6() });
+  }
 
   handleSuccess = (e, index) => {
     let date = new Date();
@@ -113,7 +118,9 @@ export default class Trails extends React.PureComponent {
     }
   };
 
-  trail = () => Col6;
+  trail = () => {
+    return this.state.trail;
+  };
 
   renderMarkers = (tokens, rx, ry, scale) => {
     let markers = [];
@@ -253,26 +260,30 @@ export default class Trails extends React.PureComponent {
 
   render() {
     let trail = this.trail();
-    return (
-      <div style={{ position: "relative", height: "100%" }}>
-        <ContainerDimensions>{this.renderSVG}</ContainerDimensions>
-        <PopUp
-          fontSize="3em"
-          onlyIf={this.state.error !== ""}
-          theme={Theme.error}
-          width={trail.width}
-        >
-          {this.props.errorText}
-        </PopUp>
-        <PopUp
-          onlyIf={this.props.progress >= trail.tokens.length}
-          theme={Theme.success}
-          retry={this.props.retry}
-          width={trail.width}
-        >
-          {this.renderCompletionContent()}
-        </PopUp>
-      </div>
-    );
+    if (!trail) {
+      return null;
+    } else {
+      return (
+        <div style={{ position: "relative", height: "100%" }}>
+          <ContainerDimensions>{this.renderSVG}</ContainerDimensions>
+          <PopUp
+            fontSize="3em"
+            onlyIf={this.state.error !== ""}
+            theme={Theme.error}
+            width={trail.width}
+          >
+            {this.props.errorText}
+          </PopUp>
+          <PopUp
+            onlyIf={this.props.progress >= trail.tokens.length}
+            theme={Theme.success}
+            retry={this.props.retry}
+            width={trail.width}
+          >
+            {this.renderCompletionContent()}
+          </PopUp>
+        </div>
+      );
+    }
   }
 }
